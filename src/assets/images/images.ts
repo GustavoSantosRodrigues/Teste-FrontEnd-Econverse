@@ -17,6 +17,7 @@ import truck from './Truck.png'
 import userCircle from './UserCircle.png'
 import whiskey from './whiskey.png'
 import iphone from './iphone.png'
+import bannerParceiros from './banner-parceiros.png'
 
 export const images = {
   bannerBlackFriday,
@@ -38,4 +39,5 @@ export const images = {
   userCircle,
   whiskey,
   iphone,
+  bannerParceiros,
 }

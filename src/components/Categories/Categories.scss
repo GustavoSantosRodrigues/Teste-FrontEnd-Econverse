@@ -1,0 +1,157 @@
+.categories {
+  padding: 39px 0 34px;
+
+  &__desktop {
+    display: block;
+  }
+
+  &__mobile {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 128px;
+  }
+
+  &__card {
+    width: 128px;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    &--active {
+      .categories__icon {
+        filter: none;
+      }
+    }
+  }
+
+  &__icon {
+    width: 61px;
+    height: 61px;
+    object-fit: contain;
+    display: block;
+  }
+
+  &__label {
+    margin-top: 14px;
+    color: #4f4f4f;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+
+    &--active {
+      color: #3019b2;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .categories {
+    &__list {
+      gap: 18px;
+    }
+
+    &__item {
+      min-width: 116px;
+    }
+
+    &__card {
+      width: 116px;
+      height: 116px;
+    }
+
+    &__icon {
+      width: 56px;
+      height: 56px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .categories {
+    padding: 28px 0 34px;
+
+    &__desktop {
+      display: none;
+    }
+
+    &__mobile {
+      display: block;
+      padding-bottom: 28px;
+
+      .swiper {
+        overflow: visible;
+      }
+
+      .swiper-pagination {
+        bottom: -26px;
+      }
+
+      .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+        background: #d9d9d9;
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #3019b2;
+      }
+    }
+
+    &__slide {
+      width: 120px !important;
+    }
+
+    &__item {
+      min-width: 120px;
+    }
+
+    &__card {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+
+      &:hover {
+        transform: none;
+      }
+    }
+
+    &__icon {
+      width: 58px;
+      height: 58px;
+    }
+
+    &__label {
+      margin-top: 12px;
+      font-size: 14px;
+    }
+  }
+}

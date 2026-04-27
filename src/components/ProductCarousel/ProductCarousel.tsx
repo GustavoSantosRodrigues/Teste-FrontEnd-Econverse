@@ -1,9 +1,10 @@
-import { Navigation } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { images } from '../../assets/images/images'
 import ProductCard from '../ProductCard/ProductCard'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 import './ProductCarousel.scss'
 
 const products = [
@@ -56,22 +57,24 @@ export default function ProductCarousel() {
         <div className="product-carousel__wrapper">
           <button
             className="product-carousel__nav product-carousel__nav--prev"
+            type="button"
             aria-label="Produto anterior"
           >
             ‹
           </button>
 
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Pagination]}
             navigation={{
               prevEl: '.product-carousel__nav--prev',
               nextEl: '.product-carousel__nav--next',
             }}
+            pagination={{ clickable: true }}
             spaceBetween={22}
             slidesPerView={4}
             breakpoints={{
               0: {
-                slidesPerView: 1.15,
+                slidesPerView: 1,
                 spaceBetween: 16,
               },
               640: {
@@ -98,6 +101,7 @@ export default function ProductCarousel() {
 
           <button
             className="product-carousel__nav product-carousel__nav--next"
+            type="button"
             aria-label="Próximo produto"
           >
             ›

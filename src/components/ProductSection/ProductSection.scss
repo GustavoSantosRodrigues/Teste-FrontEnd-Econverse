@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     gap: 34px;
-    padding: 0 24px 14px;
+    padding: 60px 24px 14px;
   }
 
   &__line {
@@ -16,6 +16,19 @@
     background: #dedede;
     flex-shrink: 0;
   }
+
+
+  &__view-all {
+    display: block;
+    margin: -4px 0 26px;
+    color: #3f3f40;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+  }
+
 
   &__title {
     margin: 0;

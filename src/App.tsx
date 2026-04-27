@@ -14,6 +14,7 @@ function App() {
         <Categories />
         <ProductSection />
         <PartnersBanner />
+        <ProductSection showTabs={false} showViewAll />
       </main>
     </>
   )

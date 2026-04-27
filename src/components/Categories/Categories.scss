@@ -32,12 +32,18 @@
     justify-content: center;
     border: 0;
     border-radius: 10px;
-    background: #ffffff;
+    background: #f4f4f4;
     box-shadow: 0 2px 9px rgba(0, 0, 0, 0.22);
     cursor: pointer;
     transition:
       transform 0.2s ease,
-      box-shadow 0.2s ease;
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover,
+    &--active {
+      background: #ffffff;
+    }
 
     &:hover {
       transform: translateY(-3px);

@@ -1,3 +1,4 @@
+import ProductCarousel from '../ProductCarousel/ProductCarousel'
 import './ProductSection.scss'
 
 const tabs = ['CELULAR', 'ACESSÓRIOS', 'TABLETS', 'NOTEBOOKS', 'TVS', 'VER TODOS']
@@ -30,6 +31,8 @@ export default function ProductSection() {
           ))}
         </nav>
       </div>
+
+      <ProductCarousel />
     </section>
   )
 }

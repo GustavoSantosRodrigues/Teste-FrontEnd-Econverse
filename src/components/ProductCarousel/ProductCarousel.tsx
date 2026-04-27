@@ -1,0 +1,109 @@
+import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { images } from '../../assets/images/images'
+import ProductCard from '../ProductCard/ProductCard'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import './ProductCarousel.scss'
+
+const products = [
+  {
+    image: images.iphone,
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    oldPrice: 'R$ 30,90',
+    price: 'R$ 28,90',
+    installment: 'ou 2x de R$ 49,95 sem juros',
+    shipping: 'Frete grátis',
+  },
+  {
+    image: images.iphone,
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    oldPrice: 'R$ 30,90',
+    price: 'R$ 28,90',
+    installment: 'ou 2x de R$ 49,95 sem juros',
+    shipping: 'Frete grátis',
+  },
+  {
+    image: images.iphone,
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    oldPrice: 'R$ 30,90',
+    price: 'R$ 28,90',
+    installment: 'ou 2x de R$ 49,95 sem juros',
+    shipping: 'Frete grátis',
+  },
+  {
+    image: images.iphone,
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    oldPrice: 'R$ 30,90',
+    price: 'R$ 28,90',
+    installment: 'ou 2x de R$ 49,95 sem juros',
+    shipping: 'Frete grátis',
+  },
+  {
+    image: images.iphone,
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    oldPrice: 'R$ 30,90',
+    price: 'R$ 28,90',
+    installment: 'ou 2x de R$ 49,95 sem juros',
+    shipping: 'Frete grátis',
+  },
+]
+
+export default function ProductCarousel() {
+  return (
+    <section className="product-carousel" aria-label="Lista de produtos">
+      <div className="container">
+        <div className="product-carousel__wrapper">
+          <button
+            className="product-carousel__nav product-carousel__nav--prev"
+            aria-label="Produto anterior"
+          >
+            ‹
+          </button>
+
+          <Swiper
+            modules={[Navigation]}
+            navigation={{
+              prevEl: '.product-carousel__nav--prev',
+              nextEl: '.product-carousel__nav--next',
+            }}
+            spaceBetween={22}
+            slidesPerView={4}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.15,
+                spaceBetween: 16,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 18,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 22,
+              },
+            }}
+            className="product-carousel__swiper"
+          >
+            {products.map((product, index) => (
+              <SwiperSlide key={`${product.title}-${index}`}>
+                <ProductCard {...product} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <button
+            className="product-carousel__nav product-carousel__nav--next"
+            aria-label="Próximo produto"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}

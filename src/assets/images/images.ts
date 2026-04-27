@@ -8,6 +8,7 @@ import userCircle from './UserCircle.png'
 import shieldCheck from './ShieldCheck.png'
 import crownSimple from './CrownSimple.png'
 import iconSearch from './search.svg'
+import bannerBlackFriday from './banner-black-friday.png'
 
 export const images = {
   creditCard,
@@ -20,4 +21,5 @@ export const images = {
   shieldCheck,
   crownSimple,
   iconSearch,
+  bannerBlackFriday,
 }

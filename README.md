@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# Teste Técnico Front-End Econverse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido para o teste técnico de Front-End da Econverse.
 
-Currently, two official plugins are available:
+O objetivo é construir uma página em **React + TypeScript**, seguindo o layout do Figma, consumindo a lista de produtos via JSON externo e criando a interação de modal ao clicar em um produto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Tecnologias utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Sass/SCSS
+- HTML semântico
+- CSS responsivo
+- Fetch API
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Objetivos do teste
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Desenvolver a página conforme o layout proposto no Figma.
+- Consumir os produtos através de um arquivo JSON externo.
+- Renderizar uma vitrine de produtos dinamicamente.
+- Abrir um modal com as principais informações do produto ao clicar em um card.
+- Utilizar Sass/SCSS como pré-processador.
+- Respeitar fontes, cores, espaçamentos, botões e organização visual do layout.
+- Não utilizar bibliotecas de UI como Bootstrap, Foundation ou semelhantes.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Link do layout
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Layout utilizado como referência:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+https://www.figma.com/proto/eZuSWfzyjMCO3taTtCqu8b/Teste-Front-End-Jr?node-id=1-1248&p=f&t=Vq2MwE7OaWPPxZF4-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## API de produtos
+
+Os produtos serão consumidos através do seguinte JSON:
+
+```txt
+https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json

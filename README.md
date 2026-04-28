@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para o teste técnico de Front-End da Econverse.
 
-O objetivo é construir uma página em **React + TypeScript**, seguindo o layout do Figma, consumindo a lista de produtos via JSON externo e criando a interação de modal ao clicar em um produto.
+A página foi construída em **React + TypeScript**, seguindo o layout do Figma, utilizando **SCSS** para estilização e consumindo os produtos através de uma API JSON.
 
 ---
 
@@ -12,35 +12,109 @@ O objetivo é construir uma página em **React + TypeScript**, seguindo o layout
 - TypeScript
 - Vite
 - Sass/SCSS
-- HTML semântico
-- CSS responsivo
+- Swiper
 - Fetch API
 
 ---
 
-## Objetivos do teste
+## Funcionalidades
 
-- Desenvolver a página conforme o layout proposto no Figma.
-- Consumir os produtos através de um arquivo JSON externo.
-- Renderizar uma vitrine de produtos dinamicamente.
-- Abrir um modal com as principais informações do produto ao clicar em um card.
-- Utilizar Sass/SCSS como pré-processador.
-- Respeitar fontes, cores, espaçamentos, botões e organização visual do layout.
-- Não utilizar bibliotecas de UI como Bootstrap, Foundation ou semelhantes.
+- Layout responsivo baseado no Figma.
+- Vitrine de produtos consumida via API.
+- Modal com as informações do produto clicado.
+- Componentes reutilizáveis.
+- Estrutura organizada com `components`, `services`, `types` e `utils`.
 
 ---
 
-## Link do layout
+## Configuração da API
 
-Layout utilizado como referência:
-
-https://www.figma.com/proto/eZuSWfzyjMCO3taTtCqu8b/Teste-Front-End-Jr?node-id=1-1248&p=f&t=Vq2MwE7OaWPPxZF4-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1
-
----
-
-## API de produtos
-
-Os produtos serão consumidos através do seguinte JSON:
+A API utilizada no teste é:
 
 ```txt
 https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json
+```
+
+Como a API bloqueia chamadas diretas do `localhost` por CORS, foi configurado um proxy no Vite para ambiente de desenvolvimento.
+
+Crie um arquivo `.env` na raiz do projeto com:
+
+```env
+VITE_PRODUCTS_API_URL=/api/products
+```
+
+---
+
+## Como rodar o projeto
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Rode o projeto em ambiente de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+---
+
+## Como compilar o projeto
+
+Para gerar o build de produção:
+
+```bash
+npm run build
+```
+
+Para visualizar o build localmente:
+
+```bash
+npm run preview
+```
+
+---
+
+## Como verificar o projeto
+
+Para verificar possíveis problemas de lint:
+
+```bash
+npm run lint
+```
+
+Para validar se o projeto compila corretamente:
+
+```bash
+npm run build
+```
+
+---
+
+## Estrutura principal
+
+```txt
+src/
+  components/
+  services/
+  types/
+  utils/
+  styles/
+  assets/
+```
+
+- `components`: componentes da interface.
+- `services`: consumo da API.
+- `types`: tipagens TypeScript.
+- `utils`: funções auxiliares, como formatação de moeda.
+- `styles`: estilos globais e configuração de container.
+- `assets`: imagens utilizadas no projeto.
+
+---
+
+## Observação
+
+O arquivo `.env` não é versionado no Git.  
+Para rodar o projeto corretamente, é necessário criar o `.env` localmente com a variável indicada acima.

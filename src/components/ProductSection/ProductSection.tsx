@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import ProductCarousel from '../ProductCarousel/ProductCarousel'
 import './ProductSection.scss'
 
@@ -12,6 +13,8 @@ export default function ProductSection({
   showTabs = true,
   showViewAll = false,
 }: ProductSectionProps) {
+  const [activeTab, setActiveTab] = useState('CELULAR')
+
   return (
     <section className="product-section" aria-labelledby="product-section-title">
       <div className="container">
@@ -33,13 +36,13 @@ export default function ProductSection({
 
         {showTabs && (
           <nav className="product-section__tabs" aria-label="Categorias de produtos">
-            {tabs.map((tab, index) => (
+            {tabs.map((tab) => (
               <button
                 key={tab}
                 type="button"
-                className={`product-section__tab ${
-                  index === 0 ? 'product-section__tab--active' : ''
-                }`}
+                className={`product-section__tab ${activeTab === tab ? 'product-section__tab--active' : ''
+                  }`}
+                onClick={() => setActiveTab(tab)}
               >
                 {tab}
               </button>
@@ -48,7 +51,7 @@ export default function ProductSection({
         )}
       </div>
 
-      <ProductCarousel />
+      <ProductCarousel activeTab={showTabs ? activeTab : undefined} />
     </section>
   )
 }

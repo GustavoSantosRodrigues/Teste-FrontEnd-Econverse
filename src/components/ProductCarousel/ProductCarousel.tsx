@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { images } from '../../assets/images/images'
 import { getProducts } from '../../services/productsService'
 import type { Product } from '../../types/product'
+import { formatCurrency } from '../../utils/formatCurrency'
 
 import ProductCard from '../ProductCard/ProductCard'
 import ProductModal from '../ProductModal/ProductModal'
@@ -13,9 +14,22 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import './ProductCarousel.scss'
-import { formatCurrency } from '../../utils/formatCurrency'
 
-export default function ProductCarousel() {
+type ProductCarouselProps = {
+  activeTab?: string
+}
+
+function ProductCarouselFeedback({ message }: { message: string }) {
+  return (
+    <section className="product-carousel" aria-label="Lista de produtos">
+      <div className="container">
+        <p className="product-carousel__feedback">{message}</p>
+      </div>
+    </section>
+  )
+}
+
+export default function ProductCarousel({ activeTab }: ProductCarouselProps) {
   const [products, setProducts] = useState<Product[]>([])
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -36,24 +50,19 @@ export default function ProductCarousel() {
     loadProducts()
   }, [])
 
+  const shouldShowProducts = !activeTab || activeTab === 'CELULAR' || activeTab === 'VER TODOS'
+  const filteredProducts = shouldShowProducts ? products : []
+
   if (isLoading) {
-    return (
-      <section className="product-carousel" aria-label="Lista de produtos">
-        <div className="container">
-          <p className="product-carousel__feedback">Carregando produtos...</p>
-        </div>
-      </section>
-    )
+    return <ProductCarouselFeedback message="Carregando produtos..." />
   }
 
   if (errorMessage) {
-    return (
-      <section className="product-carousel" aria-label="Lista de produtos">
-        <div className="container">
-          <p className="product-carousel__feedback">{errorMessage}</p>
-        </div>
-      </section>
-    )
+    return <ProductCarouselFeedback message={errorMessage} />
+  }
+
+  if (filteredProducts.length === 0) {
+    return <ProductCarouselFeedback message="Nenhum produto encontrado." />
   }
 
   return (
@@ -98,7 +107,7 @@ export default function ProductCarousel() {
               }}
               className="product-carousel__swiper"
             >
-              {products.map((product) => (
+              {filteredProducts.map((product) => (
                 <SwiperSlide key={product.productName}>
                   <ProductCard
                     image={product.photo}

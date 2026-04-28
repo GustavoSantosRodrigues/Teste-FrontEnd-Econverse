@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { images } from '../../assets/images/images'
+import { getProducts } from '../../services/productsService'
+import type { Product } from '../../types/product'
+
 import ProductCard from '../ProductCard/ProductCard'
 import ProductModal from '../ProductModal/ProductModal'
 
@@ -10,52 +13,48 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import './ProductCarousel.scss'
-
-const products = [
-  {
-    image: images.iphone,
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    oldPrice: 'R$ 30,90',
-    price: 'R$ 28,90',
-    installment: 'ou 2x de R$ 49,95 sem juros',
-    shipping: 'Frete grátis',
-  },
-  {
-    image: images.iphone,
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    oldPrice: 'R$ 30,90',
-    price: 'R$ 28,90',
-    installment: 'ou 2x de R$ 49,95 sem juros',
-    shipping: 'Frete grátis',
-  },
-  {
-    image: images.iphone,
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    oldPrice: 'R$ 30,90',
-    price: 'R$ 28,90',
-    installment: 'ou 2x de R$ 49,95 sem juros',
-    shipping: 'Frete grátis',
-  },
-  {
-    image: images.iphone,
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    oldPrice: 'R$ 30,90',
-    price: 'R$ 28,90',
-    installment: 'ou 2x de R$ 49,95 sem juros',
-    shipping: 'Frete grátis',
-  },
-  {
-    image: images.iphone,
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    oldPrice: 'R$ 30,90',
-    price: 'R$ 28,90',
-    installment: 'ou 2x de R$ 49,95 sem juros',
-    shipping: 'Frete grátis',
-  },
-]
+import { formatCurrency } from '../../utils/formatCurrency'
 
 export default function ProductCarousel() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [products, setProducts] = useState<Product[]>([])
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
+  useEffect(() => {
+    async function loadProducts() {
+      try {
+        const productsData = await getProducts()
+        setProducts(productsData)
+      } catch {
+        setErrorMessage('Não foi possível carregar os produtos.')
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadProducts()
+  }, [])
+
+  if (isLoading) {
+    return (
+      <section className="product-carousel" aria-label="Lista de produtos">
+        <div className="container">
+          <p className="product-carousel__feedback">Carregando produtos...</p>
+        </div>
+      </section>
+    )
+  }
+
+  if (errorMessage) {
+    return (
+      <section className="product-carousel" aria-label="Lista de produtos">
+        <div className="container">
+          <p className="product-carousel__feedback">{errorMessage}</p>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <>
@@ -99,11 +98,17 @@ export default function ProductCarousel() {
               }}
               className="product-carousel__swiper"
             >
-              {products.map((product, index) => (
-                <SwiperSlide key={`${product.title}-${index}`}>
+              {products.map((product) => (
+                <SwiperSlide key={product.productName}>
                   <ProductCard
-                    {...product}
-                    onBuy={() => setIsModalOpen(true)}
+                    image={product.photo}
+                    productName={product.productName}
+                    description={product.descriptionShort}
+                    oldPrice={formatCurrency(product.price + 200)}
+                    price={formatCurrency(product.price)}
+                    installment="ou 2x de R$ 49,95 sem juros"
+                    shipping="Frete grátis"
+                    onBuy={() => setSelectedProduct(product)}
                   />
                 </SwiperSlide>
               ))}
@@ -120,9 +125,10 @@ export default function ProductCarousel() {
         </div>
       </section>
 
-      <ProductModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+      <ProductModal 
+        isOpen={selectedProduct !== null}
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
       />
     </>
   )

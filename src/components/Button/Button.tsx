@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react'
 import './Button.scss'
 
 type ButtonProps = {
-  children: React.ReactNode
+  children: ReactNode
   type?: 'button' | 'submit'
   className?: string
   onClick?: () => void

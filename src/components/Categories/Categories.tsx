@@ -1,9 +1,7 @@
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
 import 'swiper/css'
 import 'swiper/css/pagination'
-
 import { images } from '../../assets/images/images'
 import './Categories.scss'
 
@@ -27,6 +25,7 @@ export default function Categories() {
     return (
         <section className="categories" aria-label="Categorias em destaque">
             <div className="container">
+
                 <div className="categories__desktop">
                     <ul className="categories__list">
                         {categoryItems.map(({ icon, label, active }) => (
@@ -36,17 +35,9 @@ export default function Categories() {
                                     className={`categories__card ${active ? 'categories__card--active' : ''}`}
                                     aria-label={label}
                                 >
-                                    <img
-                                        src={icon}
-                                        alt=""
-                                        aria-hidden="true"
-                                        className="categories__icon"
-                                    />
+                                    <img src={icon} alt="" aria-hidden="true" className="categories__icon" />
                                 </button>
-
-                                <span
-                                    className={`categories__label ${active ? 'categories__label--active' : ''}`}
-                                >
+                                <span className={`categories__label ${active ? 'categories__label--active' : ''}`}>
                                     {label}
                                 </span>
                             </li>
@@ -59,7 +50,7 @@ export default function Categories() {
                         modules={[Pagination]}
                         spaceBetween={14}
                         slidesPerView="auto"
-                        grabCursor={true}
+                        grabCursor
                         pagination={{ clickable: true }}
                     >
                         {categoryItems.map(({ icon, label, active }) => (
@@ -70,17 +61,9 @@ export default function Categories() {
                                         className={`categories__card ${active ? 'categories__card--active' : ''}`}
                                         aria-label={label}
                                     >
-                                        <img
-                                            src={icon}
-                                            alt=""
-                                            aria-hidden="true"
-                                            className="categories__icon"
-                                        />
+                                        <img src={icon} alt="" aria-hidden="true" className="categories__icon" />
                                     </button>
-
-                                    <span
-                                        className={`categories__label ${active ? 'categories__label--active' : ''}`}
-                                    >
+                                    <span className={`categories__label ${active ? 'categories__label--active' : ''}`}>
                                         {label}
                                     </span>
                                 </div>
@@ -88,6 +71,7 @@ export default function Categories() {
                         ))}
                     </Swiper>
                 </div>
+
             </div>
         </section>
     )

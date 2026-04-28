@@ -64,10 +64,10 @@
   }
 
   &__label {
-    margin-top: 14px;
+    margin-top: 22px;
     color: #4f4f4f;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.2;
     text-align: center;
 
@@ -99,7 +99,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .categories {
     padding: 28px 0 34px;
 

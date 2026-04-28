@@ -21,6 +21,9 @@ import bannerParceiros from './banner-parceiros.png'
 import facebook from './facebook.png'
 import instagram from './instagram.png'
 import linkedin from './linkedin.png'
+import setaDireita from './seta-direita.png'
+import setaEsquerda from './seta-esquerda.png'
+
 
 export const images = {
   bannerBlackFriday,
@@ -46,4 +49,6 @@ export const images = {
   facebook,
   instagram,
   linkedin,
+  setaDireita,
+  setaEsquerda,
 }

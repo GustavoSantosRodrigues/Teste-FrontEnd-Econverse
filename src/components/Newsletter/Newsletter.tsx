@@ -11,8 +11,7 @@ export default function Newsletter() {
                     </h2>
 
                     <p className="newsletter__description">
-                        Assine a nossa newsletter e receba as novidades e conteúdos exclusivos
-                        da Econverse.
+                        Assine a nossa newsletter e receba as novidades e conteúdos exclusivos da Econverse.
                     </p>
                 </div>
 

@@ -2,6 +2,7 @@ import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { images } from '../../assets/images/images'
 import ProductCard from '../ProductCard/ProductCard'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -60,7 +61,7 @@ export default function ProductCarousel() {
             type="button"
             aria-label="Produto anterior"
           >
-            ‹
+            <img src={images.setaDireita} alt="" aria-hidden="true" />
           </button>
 
           <Swiper
@@ -79,7 +80,7 @@ export default function ProductCarousel() {
               },
               640: {
                 slidesPerView: 2,
-                spaceBetween: 16,
+                spaceBetween: 18,
               },
               1024: {
                 slidesPerView: 3,
@@ -104,7 +105,7 @@ export default function ProductCarousel() {
             type="button"
             aria-label="Próximo produto"
           >
-            ›
+            <img src={images.setaEsquerda} alt="" aria-hidden="true" />
           </button>
         </div>
       </div>

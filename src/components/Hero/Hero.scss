@@ -1,81 +1,91 @@
 .hero {
+  width: 100%;
+  height: 390px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+
+  &__image {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 390px;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+  }
+
+  &__container {
+    height: 390px;
     position: relative;
-    overflow: hidden;
-    margin-top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+  }
 
-    &__image {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        rgba(0, 0, 0, 0.68) 0%,
+        rgba(0, 0, 0, 0.35) 34%,
+        rgba(0, 0, 0, 0.08) 72%);
+    z-index: 2;
+  }
+
+  &__container {
+    height: 390px;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+  }
+
+
+  &__content {
+    max-width: 620px;
+    margin-top: -8px;
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.6px;
+    white-space: nowrap;
+  }
+
+  &__description {
+    margin-bottom: 42px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+
+    strong {
+      color: #f7ca11;
+      font-weight: 700;
     }
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg,
-                rgba(0, 0, 0, 0.68) 0%,
-                rgba(0, 0, 0, 0.35) 34%,
-                rgba(0, 0, 0, 0.08) 72%);
-        z-index: 2;
-    }
-
-    &__container {
-        height: 100%;
-        position: relative;
-        z-index: 3;
-        display: flex;
-        align-items: center;
-    }
-
-    &__content {
-        max-width: 620px;
-        margin-top: -8px;
-    }
-
-    &__title {
-        margin-bottom: 22px;
-        color: #ffffff;
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 1.08;
-        letter-spacing: -0.6px;
-        white-space: nowrap;
-    }
-
-    &__description {
-        margin-bottom: 42px;
-        color: #ffffff;
-        font-size: 32px;
-        font-weight: 400;
-        line-height: 1;
-
-        strong {
-            color: #f7ca11;
-            font-weight: 700;
-        }
-    }
+  }
 }
 
 @media (max-width: 1023px) {
-    .hero {
-        height: 340px;
+  .hero {
+    height: 340px;
 
-        &__title {
-            font-size: 34px;
-        }
-
-        &__description {
-            margin-bottom: 32px;
-            font-size: 26px;
-        }
+    &__title {
+      font-size: 34px;
     }
+
+    &__description {
+      margin-bottom: 32px;
+      font-size: 26px;
+    }
+  }
 }
 
 @media (max-width: 767px) {

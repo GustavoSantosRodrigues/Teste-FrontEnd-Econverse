@@ -19,6 +19,10 @@
         list-style: none;
     }
 
+    &__mobile {
+        display: none;
+    }
+
     &__list-item {
         flex: 0 0 auto;
     }
@@ -41,7 +45,7 @@
         &:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
-            
+
         }
 
         &:focus-visible {
@@ -60,24 +64,37 @@
 
 @media (max-width: 1200px) {
     .brands-section {
-        &__list {
-            justify-content: flex-start;
-            overflow-x: auto;
-            padding: 0 4px 12px;
-            scroll-snap-type: x mandatory;
+        &__list--desktop {
+            display: none;
         }
 
-        &__list::-webkit-scrollbar {
-            height: 6px;
-        }
+        &__mobile {
+            display: block;
+            padding-bottom: 30px;
 
-        &__list::-webkit-scrollbar-thumb {
-            border-radius: 999px;
-            background: #d9d9d9;
-        }
+            .swiper {
+                padding: 4px 4px 34px;
+            }
 
-        &__list-item {
-            scroll-snap-align: start;
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+            }
+
+            .swiper-pagination {
+                bottom: 0;
+            }
+
+            .swiper-pagination-bullet {
+                width: 7px;
+                height: 7px;
+                background: #d9d9d9;
+                opacity: 1;
+            }
+
+            .swiper-pagination-bullet-active {
+                background: #3442b5;
+            }
         }
     }
 }
@@ -103,6 +120,12 @@
 
         &__logo {
             width: 105px;
+        }
+
+        &__mobile {
+            .swiper {
+                padding-bottom: 32px;
+            }
         }
     }
 }

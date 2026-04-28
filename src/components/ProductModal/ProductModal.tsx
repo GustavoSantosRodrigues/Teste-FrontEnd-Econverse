@@ -110,3 +110,4 @@ export default function ProductModal({ isOpen, onClose }: ProductModalProps) {
     </div>
   )
 }
+

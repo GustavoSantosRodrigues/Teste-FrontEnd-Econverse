@@ -5,6 +5,7 @@ import ProductSection from './components/ProductSection/ProductSection'
 import PartnersBanner from './components/PartnersBanner/PartnersBanner'
 import BrandsSection from './components/BrandsSection/BrandsSection'
 import Newsletter from './components/Newsletter/Newsletter'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <BrandsSection />
         <ProductSection showTabs={false} showViewAll />
         <Newsletter />  
+        <Footer />
       </main>
     </>
   )

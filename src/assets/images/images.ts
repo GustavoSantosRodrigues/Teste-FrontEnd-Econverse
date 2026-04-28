@@ -18,6 +18,9 @@ import userCircle from './UserCircle.png'
 import whiskey from './whiskey.png'
 import iphone from './iphone.png'
 import bannerParceiros from './banner-parceiros.png'
+import facebook from './facebook.png'
+import instagram from './instagram.png'
+import linkedin from './linkedin.png'
 
 export const images = {
   bannerBlackFriday,
@@ -40,4 +43,7 @@ export const images = {
   whiskey,
   iphone,
   bannerParceiros,
+  facebook,
+  instagram,
+  linkedin,
 }

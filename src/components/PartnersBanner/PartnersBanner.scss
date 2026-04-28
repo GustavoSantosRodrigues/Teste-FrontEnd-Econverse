@@ -22,23 +22,16 @@
         object-fit: cover;
     }
 
-    &__overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg,
-                rgba(0, 0, 0, 0.65) 0%,
-                rgba(0, 0, 0, 0.35) 38%,
-                rgba(0, 0, 0, 0.18) 100%);
-    }
 
     &__content {
         position: relative;
         z-index: 2;
-        height: 100%;
-        padding: 86px 0 48px 54px;
+        min-height: 350px;
+        padding-left: 54px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
     }
 
     &__title {
@@ -51,7 +44,7 @@
 
     &__description {
         max-width: 220px;
-        margin: 0 0 32px;
+        margin: 0 0 36px;
         color: #ffffff;
         font-size: 16px;
         font-weight: 400;
@@ -63,7 +56,6 @@
         height: 48px;
     }
 }
-
 
 @media (max-width: 1023px) {
     .partners-banner {
@@ -78,7 +70,8 @@
         }
 
         &__content {
-            padding: 64px 0 36px 36px;
+            min-height: 320px;
+            padding-left: 36px;
         }
 
         &__title {
@@ -97,7 +90,9 @@
         }
 
         &__content {
-            padding: 40px 20px 24px;
+            min-height: 260px;
+            padding: 0 20px;
+            justify-content: center;
         }
 
         &__title {

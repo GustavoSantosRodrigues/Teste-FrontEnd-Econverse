@@ -17,10 +17,11 @@ function App() {
         <Categories />
         <ProductSection />
         <PartnersBanner />
-        <ProductSection showTabs={false} showViewAll />
+        <ProductSection showTabs={false} />
+        <PartnersBanner />
         <BrandsSection />
         <ProductSection showTabs={false} showViewAll />
-        <Newsletter />  
+        <Newsletter />
         <Footer />
       </main>
     </>

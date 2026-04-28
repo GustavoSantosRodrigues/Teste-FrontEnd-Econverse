@@ -25,6 +25,7 @@ import setaDireita from './seta-direita.png'
 import setaEsquerda from './seta-esquerda.png'
 import iphoneModal from './iphone-modal.png'
 import iphoneModalDois from './iphone-modal-2.png'
+import logoFooter from './logo-footer.png'
 
 
 export const images = {
@@ -54,5 +55,6 @@ export const images = {
   setaDireita,
   setaEsquerda,
   iphoneModal,
-  iphoneModalDois
+  iphoneModalDois,
+  logoFooter
 }

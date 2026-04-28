@@ -75,7 +75,7 @@ export default function ProductCarousel({ activeTab }: ProductCarouselProps) {
               type="button"
               aria-label="Produto anterior"
             >
-              <img src={images.setaEsquerda} alt="" aria-hidden="true" />
+              <img src={images.setaDireita} alt="" aria-hidden="true" />
             </button>
 
             <Swiper
@@ -113,6 +113,7 @@ export default function ProductCarousel({ activeTab }: ProductCarouselProps) {
                     image={product.photo}
                     productName={product.productName}
                     description={product.descriptionShort}
+                    oldPrice="R$ 30,90"
                     price={formatCurrency(product.price)}
                     installment="ou 2x de R$ 49,95 sem juros"
                     shipping="Frete grátis"
@@ -127,7 +128,7 @@ export default function ProductCarousel({ activeTab }: ProductCarouselProps) {
               type="button"
               aria-label="Próximo produto"
             >
-              <img src={images.setaDireita} alt="" aria-hidden="true" />
+              <img src={images.setaEsquerda} alt="" aria-hidden="true" />
             </button>
           </div>
         </div>

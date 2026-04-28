@@ -5,6 +5,10 @@
   overflow: hidden;
   margin-top: 0;
 
+  &__button {
+    font-weight: 600;
+  }
+
   &__image {
     position: absolute;
     inset: 0;
@@ -35,14 +39,6 @@
     z-index: 2;
   }
 
-  &__container {
-    height: 390px;
-    position: relative;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-  }
-
 
   &__content {
     max-width: 620px;
@@ -52,15 +48,15 @@
   &__title {
     margin-bottom: 22px;
     color: #ffffff;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: 600;
     line-height: 1.08;
     letter-spacing: -0.6px;
     white-space: nowrap;
   }
 
   &__description {
-    margin-bottom: 42px;
+    margin-bottom: 55px;
     color: #ffffff;
     font-size: 32px;
     font-weight: 400;

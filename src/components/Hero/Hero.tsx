@@ -24,7 +24,7 @@ export default function Hero() {
                         <strong>50% Off</strong> nos produtos
                     </p>
 
-                    <Button>Ver produto</Button>
+                    <Button className="hero__button">Ver produto</Button>
                 </div>
             </div>
         </section>

@@ -16,7 +16,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__container">
         <div className="footer__brand">
-          <img src={images.logoEconverse} alt="Econverse" className="footer__logo" />
+          <img src={images.logoFooter} alt="Econverse" className="footer__logo" />
 
           <p className="footer__description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.

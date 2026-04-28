@@ -171,8 +171,8 @@
         -webkit-appearance: none;
 
         img {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             display: block;
             object-fit: contain;
             image-rendering: auto;
@@ -180,6 +180,11 @@
             outline: 0;
             background: transparent;
             box-shadow: none;
+        }
+
+        &:first-child img {
+            width: 26px;
+            height: 26px;
         }
 
         &:hover {
@@ -363,8 +368,13 @@
             height: 24px;
 
             img {
-                width: 24px;
-                height: 24px;
+                width: 22px;
+                height: 22px;
+            }
+
+            &:first-child img {
+                width: 21px;
+                height: 21px;
             }
         }
 

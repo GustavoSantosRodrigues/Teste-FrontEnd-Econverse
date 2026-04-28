@@ -27,7 +27,7 @@ const topbarItems: TopbarItem[] = [
 ]
 
 const actionItems = [
-  { icon: images.logout, label: 'Entrar ou sair' },
+  { icon: images.iconeCaixa, label: 'Entrar ou sair' },
   { icon: images.heart, label: 'Favoritos' },
   { icon: images.userCircle, label: 'Minha conta' },
   { icon: images.shoppingCart, label: 'Carrinho de compras' },

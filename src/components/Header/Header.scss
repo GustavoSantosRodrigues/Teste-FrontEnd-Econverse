@@ -316,9 +316,17 @@
             width: max-content;
             min-width: 100%;
             margin-left: 0;
-            padding: 0 16px;
             justify-content: flex-start;
-            gap: 28px;
+            gap: 7px;
+        }
+
+        &__topbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        &__topbar-icon {
+            width: 14px;
+            height: 14px;
         }
 
         &__topbar-item {
@@ -327,7 +335,7 @@
         }
 
         &__topbar-text {
-            gap: 4px;
+            font-size: 11px;
         }
 
         &__topbar-item {
@@ -388,7 +396,7 @@
         }
 
         &__menu-link {
-            padding: 0 18px;
+            padding: 0 11px;
             font-size: 12px;
         }
     }

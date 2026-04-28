@@ -48,6 +48,17 @@
     display: none;
   }
 }
+@media (max-width: 1366px) {
+  .product-carousel {
+    &__nav--prev {
+      left: -33px;
+    }
+    
+    &__nav--next {
+      right: -38px;
+    }
+  }
+}
 
 @media (max-width: 1023px) {
   .product-carousel {

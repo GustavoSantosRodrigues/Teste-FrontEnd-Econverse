@@ -30,8 +30,6 @@ export default function PartnersBanner() {
                                 className="partners-banner__image"
                             />
 
-                            <div className="partners-banner__overlay" />
-
                             <div className="partners-banner__content">
                                 <h2 className="partners-banner__title">{title}</h2>
 

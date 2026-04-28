@@ -35,16 +35,16 @@
     }
 
     &__title {
-        margin: 0 0 16px;
         color: #ffffff;
         font-size: 40px;
         font-weight: 700;
         line-height: 1.1;
+        margin-top: 72px;
     }
 
     &__description {
         max-width: 220px;
-        margin: 0 0 36px;
+        margin: 36px 0px;
         color: #ffffff;
         font-size: 16px;
         font-weight: 400;
@@ -96,7 +96,7 @@
         }
 
         &__title {
-            margin-bottom: 12px;
+            margin-top: 0px;
             font-size: 28px;
         }
 

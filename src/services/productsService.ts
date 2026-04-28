@@ -19,5 +19,14 @@ export async function getProducts(): Promise<Product[]> {
     throw new Error('Resposta inválida da API de produtos.')
   }
 
-  return data.products
+  const validProducts = data.products.filter((product) => {
+    return (
+      product.productName &&
+      product.descriptionShort &&
+      product.photo &&
+      typeof product.price === 'number'
+    )
+  })
+
+  return validProducts
 }

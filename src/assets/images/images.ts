@@ -23,6 +23,8 @@ import instagram from './instagram.png'
 import linkedin from './linkedin.png'
 import setaDireita from './seta-direita.png'
 import setaEsquerda from './seta-esquerda.png'
+import iphoneModal from './iphone-modal.png'
+import iphoneModalDois from './iphone-modal-2.png'
 
 
 export const images = {
@@ -51,4 +53,6 @@ export const images = {
   linkedin,
   setaDireita,
   setaEsquerda,
+  iphoneModal,
+  iphoneModalDois
 }

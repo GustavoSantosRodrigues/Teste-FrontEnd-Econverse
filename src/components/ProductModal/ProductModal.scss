@@ -1,0 +1,209 @@
+.product-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.62);
+    }
+
+    &__content {
+        width: 769px;
+        min-height: 299.26px;
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 4px;
+        padding: 34px 62px 34px 44px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 18px;
+        right: 26px;
+        border: 0;
+        background: transparent;
+        color: #707070;
+        font-size: 38px;
+        font-weight: 300;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    &__image-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__image {
+        width: 220px;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+    &__info {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__title {
+        width: max-content;
+        max-width: 100%;
+        margin: 0 0 12px;
+        color: #3f3f40;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: 1.6px;
+        white-space: nowrap;
+    }
+
+    &__price {
+        margin-bottom: 34px;
+        color: #3f3f40;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    &__description {
+        max-width: 300px;
+        margin: 0 0 8px;
+        color: #9f9f9f;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.55;
+        letter-spacing: 1px;
+    }
+
+    &__details {
+        margin-bottom: 38px;
+        color: #3442b5;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.8px;
+        text-decoration: none;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__quantity {
+        width: 110px;
+        height: 36px;
+        display: grid;
+        grid-template-columns: 32px 1fr 32px;
+        align-items: center;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        background: #ffffff;
+    }
+
+    &__quantity-btn {
+        height: 100%;
+        border: 0;
+        background: transparent;
+        font-size: 28px;
+        line-height: 1;
+        cursor: pointer;
+
+        &--minus {
+            color: #9f9f9f;
+            font-weight: 400;
+        }
+
+        &--plus {
+            color: #271c47;
+            font-weight: 400;
+        }
+    }
+
+    &__quantity-number {
+        color: #271c47;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+    }
+
+    &__button {
+        width: 186px;
+        height: 36px;
+        border-radius: 5px;
+        background: #f7ca11;
+        color: #271c47;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .product-modal {
+        padding: 20px;
+
+        &__content {
+            width: 100%;
+            max-width: 640px;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 48px 24px 32px;
+        }
+
+        &__image {
+            width: 180px;
+        }
+
+        &__info {
+            align-items: center;
+            text-align: center;
+        }
+
+        &__description {
+            max-width: 100%;
+        }
+
+        &__actions {
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .product-modal {
+        &__content {
+            padding: 46px 18px 28px;
+        }
+
+        &__title {
+            font-size: 17px;
+        }
+
+        &__actions {
+            width: 100%;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &__quantity,
+        &__button {
+            width: 100%;
+        }
+    }
+}

@@ -8,6 +8,7 @@ type ProductCardProps = {
   price: string
   installment: string
   shipping: string
+  onBuy?: () => void
 }
 
 export default function ProductCard({
@@ -17,6 +18,7 @@ export default function ProductCard({
   price,
   installment,
   shipping,
+  onBuy,
 }: ProductCardProps) {
   return (
     <article className="product-card">
@@ -35,7 +37,7 @@ export default function ProductCard({
 
         <span className="product-card__shipping">{shipping}</span>
 
-        <Button className="product-card__button product-card__button--primary">
+        <Button className="product-card__button product-card__button--primary" onClick={onBuy}>
           COMPRAR
         </Button>
       </div>

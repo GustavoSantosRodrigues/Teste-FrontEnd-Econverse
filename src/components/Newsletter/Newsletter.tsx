@@ -23,6 +23,7 @@ export default function Newsletter() {
                             placeholder="Digite seu nome"
                             className="newsletter__input"
                             aria-label="Digite seu nome"
+                            required
                         />
 
                         <input
@@ -31,6 +32,7 @@ export default function Newsletter() {
                             placeholder="Digite seu e-mail"
                             className="newsletter__input"
                             aria-label="Digite seu e-mail"
+                            required
                         />
 
                         <Button type="submit" className="newsletter__button">

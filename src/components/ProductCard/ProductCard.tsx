@@ -5,7 +5,7 @@ type ProductCardProps = {
   image: string
   productName: string
   description: string
-  oldPrice: string
+  oldPrice?: string
   price: string
   installment: string
   shipping: string
@@ -31,7 +31,7 @@ export default function ProductCard({
       <div className="product-card__content">
         <p className="product-card__description">{description}</p>
 
-        <span className="product-card__old-price">{oldPrice}</span>
+        {oldPrice && <span className="product-card__old-price">{oldPrice}</span>}
 
         <strong className="product-card__price">{price}</strong>
 
